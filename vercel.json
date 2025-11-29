@@ -1,0 +1,48 @@
+{
+    "version": 2,
+    "name": "bssnchat3dai-webgl",
+    "builds": [
+      { "src": "**/*", "use": "@vercel/static" }
+    ],
+    "headers": [
+      {
+        "source": "/Build/(.*)\\.wasm",
+        "headers": [
+          { "key": "Content-Type", "value": "application/wasm" }
+        ]
+      },
+      {
+        "source": "/Build/(.*)\\.wasm.br",
+        "headers": [
+          { "key": "Content-Type", "value": "application/wasm" },
+          { "key": "Content-Encoding", "value": "br" }
+        ]
+      },
+      {
+        "source": "/Build/(.*)\\.wasm.gz",
+        "headers": [
+          { "key": "Content-Type", "value": "application/wasm" },
+          { "key": "Content-Encoding", "value": "gzip" }
+        ]
+      },
+      {
+        "source": "/Build/(.*)\\.data",
+        "headers": [
+          { "key": "Content-Type", "value": "application/octet-stream" }
+        ]
+      },
+      {
+        "source": "/Build/(.*)\\.js",
+        "headers": [
+          { "key": "Content-Type", "value": "application/javascript; charset=UTF-8" }
+        ]
+      },
+      {
+        "source": "/Build/(.*)\\.mem",
+        "headers": [
+          { "key": "Content-Type", "value": "application/octet-stream" }
+        ]
+      }
+    ]
+  }
+  
